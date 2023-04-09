@@ -12,6 +12,10 @@ header {
     font-size: 16pt;
 }
 
+main {
+    margin: 10px 20px;
+}
+
 footer {
     background: linear-gradient(to right, red, orange, yellow, green, #81d4fa, darkblue, purple);
     color: lightgreen;
@@ -43,6 +47,7 @@ a:active {
     color: black;
     background-color: white;
 }
+
 
 
 
