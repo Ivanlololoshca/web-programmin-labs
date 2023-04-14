@@ -6,20 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Левенец Иван Алексеевич. Лабораторная 5</title>
     <link rel="stylesheet" href="main.css"> 
+    <script>
+            function showSum() {
+            let inputB = document.getElementById("numberA");
+            let inputA = document.getElementById("numberB");
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert(' Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+
+        function showAuthor() {
+            let author = "Автор страницы:\nЛевенец Иван Алексеевич";
+            alert(author)
+        }
+
+
+        function showAuthor2() {
+            let author = "Кто ищет тот всегда найдёт\nВ.  Лебедев-Кумач\nВСЕМ ПОКА !";
+            alert(author)
+        }
+
+    </script>
+    
+    <style>
+        .message {
+            cursor: pointer;
+            background-color: rgb(204, 171, 236);
+            border: 1px solid;
+            border-radius: 7px;
+            display: inline;
+            padding: 7px;
+            display: inline-block;
+        }
+
+       footer {
+        position: absolute;
+        left: 0;
+	    bottom: 0;
+	    width: 100%;
+	    height: 4%;
+        }
+       
+    </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
-        <div.message*2>
-            
-        </div.message>
+        <label>первое число<input type="number" value="5154" id="numberA"></label><br>
+        <label>второе число<input type="number" value="7891" id="numberB"></label><br>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+
+        <div class="message" onclick="showAuthor()"> Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
-        &copy; Левенец Иван Алексеевич, ФБ-11, 2 курс, 2023
+    <footer onclick="showAuthor2()">
+        &copy; Левенец Иван Алексеевич, ФБИ-11, 2 курс, 2023
     </footer>
 </body>
 </html>
