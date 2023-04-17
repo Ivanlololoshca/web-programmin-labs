@@ -17,6 +17,35 @@
             alert(' Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
 
+        function showRAZ() {
+            let inputC = document.getElementById("numberC");
+            let inputD = document.getElementById("numberD");
+
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let result = c - d;
+            alert(' Разность ' + c + ' и ' + d + ' равна ' + result)
+        }
+
+        function showPRO() {
+            let inputE = document.getElementById("numberE");
+            let inputK = document.getElementById("numberK");
+
+            let e = parseInt(inputE.value);
+            let k = parseInt(inputK.value);
+            let result = e * k;
+            alert(' Произведение ' + e + ' и ' + k + ' равно ' + result)
+        }
+
+        function showDEL() {
+            let inputP = document.getElementById("numberP");
+            let inputR = document.getElementById("numberR");
+
+            let p = parseInt(inputP.value);
+            let r = parseInt(inputR.value);
+            let result = p / r;
+            alert(' Деление ' + p + ' на ' + r + ' равно ' + result)
+        }
 
         function showAuthor() {
             let author = "Автор страницы:\nЛевенец Иван Алексеевич";
@@ -27,6 +56,14 @@
         function showAuthor2() {
             let author = "Кто ищет тот всегда найдёт\nВ.  Лебедев-Кумач\nВСЕМ ПОКА !";
             alert(author)
+        }
+
+        function changeOutput(buttonNum, backColor, textColor, borderColor) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка1' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.color = borderColor;
         }
 
     </script>
@@ -49,7 +86,13 @@
 	    width: 100%;
 	    height: 4%;
         }
-       
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+
     </style>
 </head>
 <body>
@@ -58,11 +101,32 @@
     </header>
 
     <main>
-        <label>первое число<input type="number" value="5154" id="numberA"></label><br>
-        <label>второе число<input type="number" value="7891" id="numberB"></label><br>
+        <label>число 1<input type="number" value="7891" id="numberB"></label><br>
+        <label>число 2<input type="number" value="5154" id="numberA"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
 
+        <label>число 1<input type="number" value="7891" id="numberD"></label><br>
+        <label>число 2<input type="number" value="5154" id="numberC"></label><br>
+        <div class="message" onclick="showRAZ()"> Найти разность</div>
+    
+        <label>число 1<input type="number" value="7891" id="numberE"></label><br>
+        <label>число 2<input type="number" value="5154" id="numberK"></label><br>
+        <div class="message" onclick="showPRO()"> Найти произведение</div>
+
+        <label>число 1<input type="number" value="7891" id="numberP"></label><br>
+        <label>число 2<input type="number" value="5154" id="numberR"></label><br>
+        <div class="message" onclick="showDEL()"> Найти деление</div>
+
         <div class="message" onclick="showAuthor()"> Узнать, кто автор страницы</div>
+
+        <div>
+        <input type="button" value="кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'pink')"> 
+        <input type="button" value="кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'white')">
+        <input type="button" value="кнопка 3" onclick="changeOutput(3, 'orange', 'white', 'red')">
+        <input type="button" value="кнопка 4" onclick="changeOutput(4, 'green', 'black', 'white')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer onclick="showAuthor2()">
