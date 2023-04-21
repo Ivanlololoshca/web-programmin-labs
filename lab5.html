@@ -66,6 +66,19 @@
             output.style.color = borderColor;
         }
 
+        function corzina() {
+      let price1 = 10; 
+      let price2 = 15; 
+      let price3 = 20; 
+      let price4 = 25; 
+      let quantity1 = parseInt(document.getElementById("quantity1").value); 
+      let quantity2 = parseInt(document.getElementById("quantity2").value); 
+      let quantity3 = parseInt(document.getElementById("quantity3").value); 
+      let quantity4 = parseInt(document.getElementById("quantity4").value); 
+      let result = price1 * quantity1 + price2 * quantity2 + price3 * quantity3 + price4 * quantity4; 
+      document.getElementById("result").innerHTML = "Общая стоимость: " + result + " рублей"; 
+        }
+        
     </script>
     
     <style>
@@ -77,6 +90,40 @@
             display: inline;
             padding: 7px;
             display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .message1 {
+            cursor: pointer;
+            background-color: rgb(204, 171, 236);
+            border: 1px solid;
+            border-radius: 7px;
+            display: inline;
+            padding: 7px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .message2 {
+            cursor: pointer;
+            background-color: rgb(204, 171, 236);
+            border: 1px solid;
+            border-radius: 7px;
+            display: inline;
+            padding: 7px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .message3 {
+            cursor: pointer;
+            background-color: rgb(204, 171, 236);
+            border: 1px solid;
+            border-radius: 7px;
+            display: inline;
+            padding: 7px;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
        footer {
@@ -93,6 +140,16 @@
             height: 40px;
         }
 
+        .corzina{
+            cursor: pointer;
+            border: 1px solid;
+            border-radius: 50px;
+            display: inline;
+            padding: 7px;
+            display: inline-block;
+            
+        }
+
     </style>
 </head>
 <body>
@@ -107,15 +164,15 @@
 
         <label>число 1<input type="number" value="7891" id="numberD"></label><br>
         <label>число 2<input type="number" value="5154" id="numberC"></label><br>
-        <div class="message" onclick="showRAZ()"> Найти разность</div>
-    
+        <div class="message1" onclick="showRAZ()"> Найти разность</div>
+
         <label>число 1<input type="number" value="7891" id="numberE"></label><br>
         <label>число 2<input type="number" value="5154" id="numberK"></label><br>
-        <div class="message" onclick="showPRO()"> Найти произведение</div>
+        <div class="message2" onclick="showPRO()"> Найти произведение</div>
 
         <label>число 1<input type="number" value="7891" id="numberP"></label><br>
         <label>число 2<input type="number" value="5154" id="numberR"></label><br>
-        <div class="message" onclick="showDEL()"> Найти деление</div>
+        <div class="message3" onclick="showDEL()"> Найти деление</div>
 
         <div class="message" onclick="showAuthor()"> Узнать, кто автор страницы</div>
 
@@ -127,6 +184,18 @@
         </div>
 
         <div id="output"></div>
+
+    
+        <label for="quantity1">молоко (10 рублей):</label>
+        <input type="number" id="quantity1" name="quantity1"><br><br>
+        <label for="quantity2">Яйца (15 рублей):</label>
+        <input type="number" id="quantity2" name="quantity2"><br><br>
+        <label for="quantity3">печенье (20 рублей):</label>
+        <input type="number" id="quantity3" name="quantity3"><br><br>
+        <label for="quantity4">вода (25 рублей):</label>
+        <input type="number" id="quantity4" name="quantity4"><br><br>
+        <button type="button" onclick="corzina()">Рассчитать</button><br><br>
+        <div class="corzina" id="result"></div>
     </main>
 
     <footer onclick="showAuthor2()">
