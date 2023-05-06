@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Левенец Иван Алексеевич, Лабораторная 6</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .game {
+            padding: 19px;
+            margin: 10px auto;
+            border: 1px solid;
+            border-radius: 40px;
+            width: 500px;
+             height: 150px;
+             margin-left: 0px;
+             background-color: rgb(199, 165, 231);
+             text-align: center;
+        }
+
+        .help-block {
+            padding: 19px;
+            margin: 10px auto;
+            border: 1px solid;
+            border-radius: 40px; 
+            background-color: rgb(76, 92, 92);
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        let number;
+        let count = 0
+        function startGame() {
+            number = Math.floor( Math.random() * 100 ) + 1;
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+
+        function guess() {
+            count++
+            let input = document.getElementById('user-number')
+            let usernumber = parseInt(input.value);
+            let message = document.getElementById('result')
+            if(usernumber > number) {
+                message.innerHTML = 'вы ввели слишком большое число'
+            }
+            if(usernumber < number) {
+                message.innerHTML = 'вы ввели слишком маленькое число'
+            }
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('tru-count').innerHTML = count;
+            }
+        }
+
+        function again(params) {
+
+        }
+
+        function PRAV() {
+            let screens = document.getElementsByClassName('pravila1')
+            screens[0].style.display = 'pravila1';
+            screens[1].style.display = 'pravila2';
+            screens[0].style.display = 'pravila1';
+        }
+        
+
+        function PRAV2() {
+            let screens = document.getElementsByClassName('pravila2')
+        }
+            function helpblock() {
+             const showRulesBtn = document.querySelector('.show-rules-btn');
+             const hideRulesBtn = document.querySelector('.hide-rules-btn');
+             const rulesBlock = document.querySelector('.rules-block');
+
+             showRulesBtn.addEventListener('click', () => {
+             showRulesBtn.style.display = 'none';
+             rulesBlock.style.display = 'block';
+});
+
+            hideRulesBtn.addEventListener('click', () => {
+            hideRulesBtn.style.display = 'none';
+             rulesBlock.style.display = 'none';
+            showRulesBtn.style.display = 'block';
+});
+}
+    </script>
+</head>
+<body>
+    <header>
+        Нгту Фб, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="game" >
+            <button onclick="startGame()">
+                сыграть в игру
+            </button>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Угадай число</h1>
+            <div>
+                Зудаманно число от 1 до 100. Угадай какое ?<br>
+                <input tupe="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Поздравляем вы выйграли!</h1>
+            <div>
+                Задуманное число: <span id="number"></span>
+            </div>
+            <div>
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <div>
+                <button onclick="again()">Сыграть ещё раз</button>
+            </div>
+        </div>
+
+        <div class="help-block">
+            <button class="show-rules-btn">Показать правила игры</button>
+            <div class="rules-block">
+              <button class="hide-rules-btn">Скрыть правила игры</button>
+              <p>Правила игры:</p>
+              <ol>
+                <li>Игроки должны выбрать свои фишки и расположить их на игровом поле</li>
+                <li>Игроки по очереди делают ходы, перемещая свои фишки по полю</li>
+                <li>Цель игры - захватить фишками как можно большее количество клеток на игровом поле</li>
+                <li>Игра заканчивается, когда все клетки на игровом поле захвачены</li>
+                <li>Побеждает игрок, который захватил большее количество клеток на игровом поле</li>
+              </ol>
+            </div>
+          </div>
+          
+    </main>
+
+    <footer>
+        &copy; Левенец Иван, ФБИ-11, 2 курс, 2023
+    </footer>
+    
+</body>
+</html>
