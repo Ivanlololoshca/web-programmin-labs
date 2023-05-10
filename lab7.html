@@ -17,6 +17,26 @@
         blocks.appendChild(block);
         }
     }
+
+    function showExchange() {
+        let exchange = [51.7387, 52.5927, 52.8503, 53.6138, 53.2166,
+         54.0499, 53.9475, 	54.4427, 54.2589, 54.2589];
+        let table = document.getElementById('dollar-Exchange');
+for (let i = 0; i < exchange.length; i++) {
+    let tr = document.createElement('tr');
+    let td = document.createElement('td');
+    td.innerHTML = exchange[i];
+    tr.appendChild(td);
+    table.appendChild(tr);
+}
+
+    let sum = 0;
+    for (let i = 0; i < exchange.length; i++) {
+        sum = sum + exchange[i];
+    }
+    let average = sum / exchange.length;
+    document.getElementById('detail').innerHTML = "среднее значение: " + average;
+    }
 </script>
 <body>
     <header>
@@ -26,6 +46,10 @@
 <main>
    <button onclick="addBlocks()">создать блоки</button> 
    <div id="blocks"></div>
+
+   <button onclick="showExchange()">курс доллара</button>
+   <table border="1" id="dollar-Exchange"></table>
+   <div id="detail"></div>
 </main>
 
     <footer>
